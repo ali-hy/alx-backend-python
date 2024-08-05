@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 '''run multiple wait_randoms at the same time'''
-import asyncio
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
