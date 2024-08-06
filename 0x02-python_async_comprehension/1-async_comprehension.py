@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
 '''asynchronous coroutine that takes no arguments and returns a list of 10'''
-import asyncio
-import random
-from typing import Generator
+from typing import List
+async_generator = __import__('0-async_generator').async_generator
 
 
-async def async_generator() -> Generator[float, None, None]:
-    """loop 10 times, each time asynchronously wait 1
-    second, then yield a random number between 0 and 10"""
-    for _ in range(0, 10):
-        await asyncio.sleep(1)
-        yield random.uniform(0, 10)
+async def async_comprehension() -> List[float]:
+    """Collects async generated list and return it"""
+    return [_ async for _ in async_generator()]
